@@ -26,41 +26,33 @@ body {
     background-position: top center;
     background-size: 550px;
     overflow: hidden;
+    box-shadow: 2px 5px 20px rgba(0,0,0,.5);
 }
 input {
     display: none;
 }
 /* 탭메뉴 제목 */
-label[for^="tab"] {
+.tabBox {
     position: absolute;
     bottom: 100px;
-    left: 50px;
-    font-size: 18px;
-    width: 150px;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.tabBox > label {
+    width: 100%;
     text-align: center;
-    padding: 5px 0;
+    padding: 8px 0;
     background-color: rgba(255, 255, 255, .5);
     border: 3px solid burlywood;
     border-bottom: 0;
     border-radius: 15px 15px 0 0;
     box-sizing: border-box;
     z-index: 999;
+    color: rgb(144, 91, 63);
 }
-label[for="tab1"] {
-    left: 0;
-}
-label[for="tab2"] {
-    left: 150px;
-}
-label[for="tab3"] {
-    left: 300px;
-}
-label[for="tab4"] {
-    left: 450px;
-}
-label[for="tab5"] {
-    left: 600px;
-}
+
 /* 탭메뉴 내용 */
 .item {
     display: none;
@@ -139,13 +131,17 @@ label[for="tab5"] {
 .on_acc10 {background-image: url('../images/acc10.png'); z-index: 9;}
 
 /* 탭 메뉴 클릭 */
-input[name="tab-menu"]:checked + label {
-    background-color: burlywood;
-}
-input[name="tab-menu"]:checked + label + div {
-    display: flex;
-    background-color: burlywood;
-}
+#tab1:checked ~ .tabBox > label[for="tab1"],
+#tab2:checked ~ .tabBox > label[for="tab2"],
+#tab3:checked ~ .tabBox > label[for="tab3"],
+#tab4:checked ~ .tabBox > label[for="tab4"],
+#tab5:checked ~ .tabBox > label[for="tab5"] {background-color: burlywood;}
+
+#tab1:checked ~ .hair,
+#tab2:checked ~ .top,
+#tab3:checked ~ .bottom,
+#tab4:checked ~ .shoes,
+#tab5:checked ~ .acc {display: flex;background-color: burlywood;}
 
 /* 머리파츠 클릭 */
 input[name="item-hair"]:checked + .on {display: block;}
