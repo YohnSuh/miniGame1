@@ -51,6 +51,7 @@ input {
     box-sizing: border-box;
     z-index: 999;
     color: rgb(144, 91, 63);
+    cursor: pointer;
 }
 
 /* 탭메뉴 내용 */
@@ -67,6 +68,7 @@ input {
 .item > label {
     width: 100%;
     text-align: center;
+    cursor: pointer;
 }
 .item > label img {
     height: 100%;
